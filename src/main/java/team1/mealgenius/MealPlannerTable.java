@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ *  Display the Calender Display for Meal selection from the database  * 
+ *   Author Rabia Awais
+
  */
 package team1.mealgenius;
 
@@ -47,9 +48,7 @@ public class MealPlannerTable extends JFrame {
         
         String[] mealOptions = DatabaseQuery.selectRecipeList();
 
-        // Fetch combo box values from SQLite
-        //Vector<String> mealOptions = fetchMealOptionsFromDB();
-
+        
         // Add combo box editors to all editable cells
         JComboBox<String> comboBox = new JComboBox<>(mealOptions);
         for (int i = 1; i <= DAYS.length; i++) {
@@ -61,19 +60,7 @@ public class MealPlannerTable extends JFrame {
         setVisible(true);
     }
 
-//    private Vector<String> fetchMealOptionsFromDB() {
-//        Vector<String> options = new Vector<>();
-//        try (Connection conn = DriverManager.getConnection(DB_URL);
-//             Statement stmt = conn.createStatement();
-//             ResultSet rs = stmt.executeQuery("SELECT meal_name FROM meals")) {
-//            while (rs.next()) {
-//                options.add(rs.getString("meal_name"));
-//            }
-//        } catch (SQLException e) {
-//            JOptionPane.showMessageDialog(this, "Error loading meal data: " + e.getMessage());
-//        }
-//        return options;
-//    }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(MealPlannerTable::new);
