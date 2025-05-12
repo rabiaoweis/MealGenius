@@ -42,4 +42,9 @@ public class CalendarDisplay { // same as App.java
 
         frame.setVisible(true);
     } 
+    
+    public static String[] mealweek(){
+        String[] meals =  {"Dinner","Biryani", "Chicken Pot Pie", "BBQ chicken", "Daal","Mixed Veggi Stew", "Lasagna","Chicken Soup"};
+        return meals;
+    }
 }
