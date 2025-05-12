@@ -72,10 +72,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jTable1_Calendar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Breakfast", "eggpuff", "", null, null, null, null, null},
-                {"Lunch", null, null, null, null, null, null, null},
-                {"Dinner", null, null, null, null, null, null, null},
-                {"Snacks", null, null, null, null, null, null, null}
+                {"", "", "", null, null, null, null, null}
             },
             new String [] {
                 "", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
@@ -111,8 +108,8 @@ public class MainScreen extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jLabel1))
                 .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(488, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Calendar", jPanel2);
