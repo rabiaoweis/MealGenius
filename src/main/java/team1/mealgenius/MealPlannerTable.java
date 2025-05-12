@@ -44,9 +44,11 @@ public class MealPlannerTable extends JFrame {
 
         JTable table = new JTable(model);
         table.setRowHeight(30);
+        
+        String[] mealOptions = DatabaseQuery.selectRecipeList();
 
         // Fetch combo box values from SQLite
-        Vector<String> mealOptions = fetchMealOptionsFromDB();
+        //Vector<String> mealOptions = fetchMealOptionsFromDB();
 
         // Add combo box editors to all editable cells
         JComboBox<String> comboBox = new JComboBox<>(mealOptions);
@@ -59,19 +61,19 @@ public class MealPlannerTable extends JFrame {
         setVisible(true);
     }
 
-    private Vector<String> fetchMealOptionsFromDB() {
-        Vector<String> options = new Vector<>();
-        try (Connection conn = DriverManager.getConnection(DB_URL);
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT meal_name FROM meals")) {
-            while (rs.next()) {
-                options.add(rs.getString("meal_name"));
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Error loading meal data: " + e.getMessage());
-        }
-        return options;
-    }
+//    private Vector<String> fetchMealOptionsFromDB() {
+//        Vector<String> options = new Vector<>();
+//        try (Connection conn = DriverManager.getConnection(DB_URL);
+//             Statement stmt = conn.createStatement();
+//             ResultSet rs = stmt.executeQuery("SELECT meal_name FROM meals")) {
+//            while (rs.next()) {
+//                options.add(rs.getString("meal_name"));
+//            }
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(this, "Error loading meal data: " + e.getMessage());
+//        }
+//        return options;
+//    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(MealPlannerTable::new);
